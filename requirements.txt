@@ -5,4 +5,4 @@ fpdf2==2.7.4
 duckduckgo-search==6.1.6
 faiss-cpu==1.7.4
 unstructured
-nest_asyncio==1.6.0
+nest-asyncio==1.6.0
