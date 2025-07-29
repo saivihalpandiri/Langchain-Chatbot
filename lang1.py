@@ -1,7 +1,6 @@
 # ✅ Full LangChain Smart Chatbot with Pro Features
 import os
 import streamlit as st
-from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.document_loaders import PyPDFLoader, UnstructuredWordDocumentLoader
 from langchain.vectorstores import FAISS
@@ -22,9 +21,6 @@ import nest_asyncio
 
 # Apply the patch for asyncio
 nest_asyncio.apply()
-
-# Load .env
-load_dotenv()
 api_key = os.getenv("GOOGLE_API_KEY")
 os.environ["GOOGLE_API_KEY"] = api_key
 
