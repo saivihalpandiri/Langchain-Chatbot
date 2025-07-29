@@ -3,7 +3,7 @@ import os
 import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.document_loaders import PyPDFLoader, UnstructuredWordDocumentLoader
-from langchain.vectorstores import FAISS
+from langchain.vectorstores import Chroma
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain.chains import RetrievalQA, ConversationalRetrievalChain
 from langchain.tools import DuckDuckGoSearchRun
@@ -83,7 +83,7 @@ if uploaded_file:
 
     if docs:
         embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
-        vectorstore = FAISS.from_documents(docs, embeddings)
+        vectorstore = Chroma.from_documents(docs, embeddings)
         retriever = vectorstore.as_retriever()
 
         custom_prompt = PromptTemplate(
