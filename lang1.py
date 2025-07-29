@@ -2,7 +2,7 @@
 import os
 import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain.document_loaders import PyPDFLoader, UnstructuredWordDocumentLoader
+from langchain_community.document_loaders import PyPDFLoader, UnstructuredWordDocumentLoader
 from langchain.vectorstores import Chroma
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain.chains import RetrievalQA, ConversationalRetrievalChain
